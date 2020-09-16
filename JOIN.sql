@@ -116,5 +116,5 @@ SUM(CASE WHEN goal.teamid = game.team1 THEN 1 ELSE 0 END) as score1,
 game.team2,
 SUM(CASE WHEN goal.teamid = game.team2 THEN 1 ELSE 0 END) as score2
 FROM game LEFT JOIN goal ON (game.id = goal.matchid)
-GROUP BY game.mdate, game.team1, game.team2
-ORDER BY game.mdate, game.team1, game.team2;
+GROUP BY game.mdate, matchid, game.team1, game.team2
+ORDER BY game.mdate, matchid,game.team1, game.team2;
